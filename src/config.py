@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from platformdirs import user_config_dir
 
 PROJECT_FOLDER = Path(__file__).resolve().parent.parent

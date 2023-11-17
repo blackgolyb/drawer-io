@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QLabel
+from PyQt5.QtWidgets import QLabel, QMainWindow
 
 
 class MainWindow(QMainWindow):

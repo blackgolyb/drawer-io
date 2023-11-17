@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+
 import numpy as np
 from PIL import Image
 

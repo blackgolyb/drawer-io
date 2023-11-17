@@ -1,8 +1,7 @@
-from pathlib import Path
 from os import system
+from pathlib import Path
 
 from scripts.blackify import blackify
-
 
 project_folder = Path(__file__).resolve().parent.parent
 ui_folder = project_folder / "ui"

@@ -1,4 +1,4 @@
-from pynput.mouse import Controller, Button
+from pynput.mouse import Button, Controller
 
 
 class Mouse(Controller):

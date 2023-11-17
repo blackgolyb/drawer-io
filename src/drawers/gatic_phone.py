@@ -1,9 +1,10 @@
-from dataclasses import dataclass
 import time
-import numpy as np
-import keyboard
+from dataclasses import dataclass
 
+import keyboard
+import numpy as np
 from pynput.mouse import Button
+
 from src.services.mouse import Mouse
 
 mouse = Mouse()
@@ -38,7 +39,7 @@ colors_coords = np.array(
     ]
 )
 
-colors = np.array(
+color_pallet = np.array(
     [
         [0, 0, 0],
         [102, 102, 102],
@@ -78,8 +79,8 @@ class Drawer(object):
 
         self.prev_color = target_color
 
-        for i in range(len(colors)):
-            if not np.array_equal(colors[i], target_color):
+        for i in range(len(color_pallet)):
+            if not np.array_equal(color_pallet[i], target_color):
                 continue
 
             mouse.position = (colors_coords[i][0], colors_coords[i][1])
