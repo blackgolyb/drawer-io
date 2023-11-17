@@ -3,9 +3,10 @@ import time
 import numpy as np
 import keyboard
 
-from pynput.mouse import Button, Controller
+from pynput.mouse import Button
+from src.services.mouse import Mouse
 
-mouse = Controller()
+mouse = Mouse()
 
 
 @dataclass
@@ -87,29 +88,21 @@ class Drawer(object):
 
     def draw_rect(self, rect):
         self.select_color(rect.color)
-        mouse.position = (
+        mouse.drag(
             self.canvas.padding[0] + rect.start[0],
             self.canvas.padding[1] + rect.start[1],
-        )
-        mouse.press(Button.left)
-        mouse.position = (
             self.canvas.padding[0] + rect.end[0],
             self.canvas.padding[1] + rect.end[1],
         )
-        mouse.release(Button.left)
 
     def draw_pixel(self, pixel):
         self.select_color(pixel.color)
-        mouse.position = (
+        mouse.drag(
             self.canvas.padding[0] + pixel.x,
             self.canvas.padding[1] + pixel.y,
-        )
-        mouse.press(Button.left)
-        mouse.position = (
             self.canvas.padding[0] + pixel.x + 1,
             self.canvas.padding[1] + pixel.y + 1,
         )
-        mouse.release(Button.left)
 
     def draw(self, figures):
         self.prev_color = []

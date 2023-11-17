@@ -33,7 +33,7 @@ def main():
             [254, 175, 168],
         ]
     )
-    a = ColorPalateApproximator((800, 800), colors=colors, patch=4)
+    a = ColorPalateApproximator((800, 800), colors=colors, patch=10)
     # a = ColorPalateApproximator(canvas_size, colors=colors)
     shapes = a(image)
     # print(shapes)
