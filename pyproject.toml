@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "drawer-io"
+version = "0.1.0"
+description = "PyQt app"
+authors = ["Blackgolyb <andrejomelnickij@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "scripts" },
+    { include = "widgets", from = "src" },
+    { include = "ui", from = "src" },
+    { include = "services", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyqt5 = "5.15.2"
+platformdirs = "^3.10.0"
+
+[tool.poetry.scripts]
+convert-ui = "scripts.convert_ui:convert_ui_file_to_python"
+blackify = "scripts.blackify:blackify"
+start = "main:main"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
